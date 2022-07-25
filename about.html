@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABOUT | Fiqri Food</title>
+    <link rel="stylesheet" href="fiqri.css" />
+    <style>
+      /******************************************************/
+      /******************** Desain Menu *********************/
+      /******************************************************/
+
+      nav {
+        height: 40px;
+        width: 100%;
+        background: #3498db;
+        font-size: 11pt;
+        font-family: "PT Sans", Arial, sans-serif;
+        font-weight: bold;
+        position: relative;
+      }
+      nav ul {
+        padding: 0;
+        margin: 0 auto;
+        width: 500px;
+        height: 40px;
+      }
+      nav li {
+        display: inline;
+        float: left;
+      }
+      nav a {
+        color: #ffffff;
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 40px;
+      }
+      nav a:hover,
+      nav a:active {
+        background-color: #ecf0f1;
+        color: #333;
+      }
+      nav a#pull {
+        display: none;
+      }
+      /******************************************************/
+      /*************** Desain Menu Responsive ***************/
+      /******************************************************/
+
+      /* Desain untuk perangkat dengan layar 600px kebawah*/
+      @media screen and (max-width: 600px) {
+        nav {
+          height: auto;
+          border-bottom: 0;
+          background: #3498db;
+        }
+        nav ul {
+          width: 100%;
+          display: none;
+          height: auto;
+        }
+        nav li {
+          width: 100%;
+          float: none;
+          display: block;
+          background: #ffffff;
+        }
+        nav li a {
+          border-bottom: 1px solid #f0f0f0;
+          border-right: 1px solid #f0f0f0;
+        }
+        nav a {
+          text-align: left;
+          width: 100%;
+          text-indent: 25px;
+          color: #333333;
+        }
+        nav a#pull {
+          display: block;
+          background-color: #3498db;
+          width: 100%;
+          position: relative;
+          color: #ffffff;
+        }
+        nav a#pull:after {
+          content: "";
+          background: url("nav-icon.png") no-repeat;
+          width: 30px;
+          height: 30px;
+          display: inline-block;
+          position: absolute;
+          right: 15px;
+          top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="clearfix">
+      <a href="#" id="pull">Menu</a>
+      <ul class="clearfix">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="resto.html">Daftar Resto</a></li>
+      </ul>
+    </nav>
+    <script type="text/javascript">
+      $(function () {
+        var pull = $("#pull"); // Variabel tombol navigasi (akan muncul hanya pada perangkat mobile)
+        menu = $("nav ul"); // Variabel menu
+
+        $(pull).on("click", function (e) {
+          e.preventDefault();
+          menu.slideToggle();
+        });
+        $(window).resize(function () {
+          var w = $(window).width();
+          if (w > 600 && menu.is(":hidden")) {
+            menu.removeAttr("style");
+          }
+        });
+      });
+    </script>
+    
+      <main class="content">
+        <h1>BIODATA PEMBUAT</h1>
+        <div class="konten-fiqriallivramadhan">
+          <br />
+          <ul>
+            <li><b>NAMA</b> : Fiqri Alliv ramadhan</li>
+            <li><b>Kelas</b> : 2C</li>
+            <li><b>NPM</b> :432007006200081</li>
+            <li><b>Plugin Yang Saya Gunakan :</b> JQuery Untuk Responsive Menu Navigasi</li>
+            <li>- Saya membuat website ini sekaligus untuk mengetes kemapuan CSS dan HTML saya</li>
+          </ul>
+          <p>
+            <ul>
+           <li> About us. Fiqri Food, the first and only homegrown food delivery app and website run by restaurant owners, is now live and available for download on iOS and Android platforms. Amazing deals, countless choices and order your favorite food on GoFood apps at unbelievable prices.</li>
+           
+            </ul>
+          </p>
+          <br />
+        </div>
+      </main>
+
+      <section class="sisi-fiqriallivramadhan">
+        <h1>PROFIL PEMBUAT</h1>
+        <br />
+        <br />
+        <div class="sisi-fiqriallivramadhan-area">
+          <div class="about-fiqriallivramadhan">
+            <br />
+            <img src="./img/profile.jpeg" alt="" />
+            <h4>Fiqri Alliv ramadhan</h4>
+            <span>NPM : 432007006200081</span>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <h4>Fiq Food | Tugas Akhir Semester Web</h4>
+        <span style="color: white">&copy; Dibuat oleh #fiqriallivramadhan</span>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="jquery.js"></script>
+  </body>
+</html>
