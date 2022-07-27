@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HOME | Fiqri Food</title>
     <link rel="stylesheet" href="fiqri.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
     <style>
       /******************************************************/
       /******************** Desain Menu *********************/
@@ -96,6 +98,24 @@
         }
       }
     </style>
+	<script>
+		$(function() {
+			var pull 		= $('#pull'); // Variabel tombol navigasi (akan muncul hanya pada perangkat mobile)
+				menu 		= $('nav ul'); // Variabel menu
+
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+			$(window).resize(function(){
+        		var w = $(window).width();
+        		if(w > 600 && menu.is(':hidden')) {
+        			menu.removeAttr('style');
+        		}
+    		});
+		});
+	</script>
+
   </head>
   <body>
     <nav class="clearfix">
@@ -107,23 +127,7 @@
         <li><a href="resto.html">Daftar Resto</a></li>
       </ul>
     </nav>
-    <script type="text/javascript">
-      $(function () {
-        var pull = $("#pull"); // Variabel tombol navigasi (akan muncul hanya pada perangkat mobile)
-        menu = $("nav ul"); // Variabel menu
-
-        $(pull).on("click", function (e) {
-          e.preventDefault();
-          menu.slideToggle();
-        });
-        $(window).resize(function () {
-          var w = $(window).width();
-          if (w > 600 && menu.is(":hidden")) {
-            menu.removeAttr("style");
-          }
-        });
-      });
-    </script>
+  
     <div class="wrapper-fiqriallivramadhan">
       <br /><br />
       <main class="content">
@@ -248,6 +252,6 @@
     </div>
 
     
-    <script src="jquery.js"></script>
+    
   </body>
 </html>
